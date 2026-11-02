@@ -45,6 +45,7 @@ shader_parameter/submersion = 0.0
 shader_parameter/distortion_strength = 0.0012
 shader_parameter/center_tint = Color(0, 0.117647, 0.235294, 1)
 shader_parameter/edge_tint = Color(0, 0.039216, 0.156863, 1)
+shader_parameter/tint_strength = 1.0
 
 [node name="Main" type="Node3D" unique_id=814719829]
 
@@ -57,8 +58,6 @@ preview_chunks_per_frame = 8
 [node name="Player" type="CharacterBody3D" parent="." unique_id=1032520321]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4402025, 0)
 script = ExtResource("2_sugp2")
-walk_speed = 10.0
-sprint_speed = 15.0
 
 [node name="Camera3D" type="Camera3D" parent="Player" unique_id=408671508]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.65, 0)
@@ -76,8 +75,7 @@ environment = ExtResource("4_o6xl0")
 
 [node name="Sun" type="DirectionalLight3D" parent="." unique_id=1596214804]
 transform = Transform3D(0.81915206, 0.32898995, -0.46984634, 0, 0.81915206, 0.57357645, 0.57357645, -0.46984634, 0.6710101, 0, 0, 0)
-light_color = Color(0.6156863, 0.7058824, 1, 1)
-light_energy = 0.55
+light_energy = 0.15
 shadow_enabled = true
 shadow_opacity = 0.5
 shadow_blur = 5.0
@@ -112,6 +110,7 @@ cast_shadow = 0
 mesh = SubResource("SphereMesh_1vivr")
 
 [node name="Water" type="MeshInstance3D" parent="." unique_id=1624236304]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7161236, 0, 4.139472)
 mesh = SubResource("PlaneMesh_1vivr")
 surface_material_override/0 = ExtResource("9_choun")
 script = ExtResource("10_choun")
