@@ -1,0 +1,129 @@
+[gd_scene format=3 uid="uid://b5hjodxlgs3fo"]
+
+[ext_resource type="Script" uid="uid://uobdcqp6sy3t" path="res://scripts/world.gd" id="1_0wfyh"]
+[ext_resource type="Script" uid="uid://4t8f27nffir2" path="res://scripts/player.gd" id="2_sugp2"]
+[ext_resource type="Script" uid="uid://de4ib84tkudko" path="res://scripts/terrain_grounder.gd" id="3_sugp2"]
+[ext_resource type="Script" uid="uid://c1t0w4hgi565h" path="res://scripts/procedural_tree_gallery.gd" id="4_jyhfs"]
+[ext_resource type="Environment" uid="uid://3nm77otb7gyo" path="res://environment/night.tres" id="4_o6xl0"]
+[ext_resource type="Script" uid="uid://dkj872pnni6sb" path="res://scripts/procedural_forest.gd" id="5_tbgi4"]
+[ext_resource type="Script" uid="uid://udscviorfbj0" path="res://scripts/procedural_grass.gd" id="6_tefeu"]
+[ext_resource type="Shader" uid="uid://8cqrsxkxp33h" path="res://shaders/star_dome.gdshader" id="8_85g3d"]
+[ext_resource type="Material" uid="uid://vupq4xdw4cs4" path="res://water/water_material.tres" id="9_choun"]
+[ext_resource type="Script" uid="uid://dgai0mhqnkwly" path="res://scripts/water_follow.gd" id="10_choun"]
+[ext_resource type="Script" uid="uid://buemv6650swde" path="res://scripts/underwater_effect.gd" id="11_eb6dy"]
+[ext_resource type="Shader" uid="uid://8ehjgscc78w6" path="res://shaders/underwater_overlay.gdshader" id="12_trceg"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1vivr"]
+radius = 0.35
+height = 1.8
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ya4ey"]
+render_priority = 0
+shader = ExtResource("8_85g3d")
+shader_parameter/sky_tint = Color(0, 0, 0, 1)
+shader_parameter/star_color = Color(1, 1, 1, 1)
+shader_parameter/star_density = 400.0
+shader_parameter/star_threshold = 0.985
+shader_parameter/star_size = 0.07999999821186
+shader_parameter/star_brightness = 5.0
+shader_parameter/horizon_fade = 0.25
+
+[sub_resource type="SphereMesh" id="SphereMesh_1vivr"]
+radius = 400.0
+height = 800.0
+radial_segments = 48
+rings = 24
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_1vivr"]
+size = Vector2(128, 128)
+subdivide_width = 255
+subdivide_depth = 255
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a8y0u"]
+shader = ExtResource("12_trceg")
+shader_parameter/submersion = 0.0
+shader_parameter/distortion_strength = 0.0012
+shader_parameter/center_tint = Color(0, 0.117647, 0.235294, 1)
+shader_parameter/edge_tint = Color(0, 0.039216, 0.156863, 1)
+
+[node name="Main" type="Node3D" unique_id=814719829]
+
+[node name="World" type="Node3D" parent="." unique_id=740992968]
+script = ExtResource("1_0wfyh")
+view_radius = 5
+preview_radius = 5
+preview_chunks_per_frame = 8
+
+[node name="Player" type="CharacterBody3D" parent="." unique_id=1032520321]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4402025, 0)
+script = ExtResource("2_sugp2")
+walk_speed = 10.0
+sprint_speed = 15.0
+
+[node name="Camera3D" type="Camera3D" parent="Player" unique_id=408671508]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.65, 0)
+current = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player" unique_id=231293062]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("CapsuleShape3D_1vivr")
+
+[node name="TerrainGrounder" type="Node" parent="Player" unique_id=52001201]
+script = ExtResource("3_sugp2")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1936271278]
+environment = ExtResource("4_o6xl0")
+
+[node name="Sun" type="DirectionalLight3D" parent="." unique_id=1596214804]
+transform = Transform3D(0.81915206, 0.32898995, -0.46984634, 0, 0.81915206, 0.57357645, 0.57357645, -0.46984634, 0.6710101, 0, 0, 0)
+light_color = Color(0.6156863, 0.7058824, 1, 1)
+light_energy = 0.55
+shadow_enabled = true
+shadow_opacity = 0.5
+shadow_blur = 5.0
+
+[node name="TreeGallery" type="Node3D" parent="." unique_id=797972864]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08034, 0, 82.58043)
+script = ExtResource("4_jyhfs")
+show_trees = false
+tree_count = 11
+tree_spacing = 10.0
+overall_scale = 1.7
+trunk_height_multiplier = 2.0
+canopy_radius_multiplier = 1.6
+canopy_distortion = 0.37
+
+[node name="Forest" type="Node3D" parent="." unique_id=675454585]
+script = ExtResource("5_tbgi4")
+density_multiplier = 3.0
+max_trees_per_chunk = 20
+collision_enabled = false
+
+[node name="Grass" type="Node3D" parent="." unique_id=1212526083]
+script = ExtResource("6_tefeu")
+max_candidates_per_chunk = 3000
+color_variation = 1.0
+enable_patchiness = true
+patch_frequency = 0.097
+
+[node name="StarDome" type="MeshInstance3D" parent="." unique_id=1672802499]
+material_override = SubResource("ShaderMaterial_ya4ey")
+cast_shadow = 0
+mesh = SubResource("SphereMesh_1vivr")
+
+[node name="Water" type="MeshInstance3D" parent="." unique_id=1624236304]
+mesh = SubResource("PlaneMesh_1vivr")
+surface_material_override/0 = ExtResource("9_choun")
+script = ExtResource("10_choun")
+
+[node name="UnderwaterEffect" type="CanvasLayer" parent="." unique_id=1771060732]
+script = ExtResource("11_eb6dy")
+
+[node name="ColorRect" type="ColorRect" parent="UnderwaterEffect" unique_id=1554522747]
+material = SubResource("ShaderMaterial_a8y0u")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

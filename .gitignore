@@ -1,0 +1,6 @@
+.godot/
+*.translation
+Thumbs.db
+Desktop.ini
+*.tmp
+*.bak
