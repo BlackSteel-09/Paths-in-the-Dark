@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://dgai0mhqnkwly" path="res://scripts/water_follow.gd" id="10_choun"]
 [ext_resource type="Script" uid="uid://buemv6650swde" path="res://scripts/underwater_effect.gd" id="11_eb6dy"]
 [ext_resource type="Shader" uid="uid://8ehjgscc78w6" path="res://shaders/underwater_overlay.gdshader" id="12_trceg"]
+[ext_resource type="PackedScene" path="res://scenes/companion.tscn" id="13_trceg"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1vivr"]
 radius = 0.35
@@ -110,7 +111,7 @@ cast_shadow = 0
 mesh = SubResource("SphereMesh_1vivr")
 
 [node name="Water" type="MeshInstance3D" parent="." unique_id=1624236304]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7161236, 0, 4.139472)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.2305202, 0, -3.1151161)
 mesh = SubResource("PlaneMesh_1vivr")
 surface_material_override/0 = ExtResource("9_choun")
 script = ExtResource("10_choun")
@@ -126,3 +127,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[node name="Companion" parent="." unique_id=1213614634 instance=ExtResource("13_trceg")]
+comfort_min = 1.05
+comfort_max = 2.35
+start_moving_distance = 2.45
+stop_distance = 0.38
+face_turn_speed = 8.0
+print_state_changes = true
