@@ -1,0 +1,375 @@
+[gd_scene load_steps=3 format=3]
+
+[sub_resource type="SystemFont" id="Serif"]
+font_names = PackedStringArray("Cinzel", "Georgia", "Times New Roman")
+
+[sub_resource type="SystemFont" id="Sans"]
+font_names = PackedStringArray("Work Sans", "Segoe UI", "Arial")
+
+[node name="ActSelection" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="Content" type="Control" parent="."]
+layout_mode = 1
+anchor_left = 0.1
+anchor_top = 0.2
+anchor_right = 0.1
+anchor_bottom = 0.2
+offset_right = 780.0
+offset_bottom = 550.0
+mouse_filter = 2
+
+[node name="Eyebrow" type="Label" parent="Content"]
+layout_mode = 1
+offset_left = 0
+offset_top = 0
+offset_right = 580
+offset_bottom = 24
+mouse_filter = 2
+text = "T H E   R O A D   A H E A D"
+theme_override_fonts/font = SubResource("Sans")
+theme_override_font_sizes/font_size = 12
+theme_override_colors/font_color = Color(0.274510, 0.611765, 0.600000, 1.000000)
+
+
+[node name="Heading" type="Label" parent="Content"]
+layout_mode = 1
+offset_left = 0
+offset_top = 27
+offset_right = 690
+offset_bottom = 101
+mouse_filter = 2
+text = "Choose an Act"
+theme_override_fonts/font = SubResource("Serif")
+theme_override_font_sizes/font_size = 49
+theme_override_colors/font_color = Color(0.925490, 0.894118, 0.968627, 1.000000)
+
+
+[node name="Description" type="Label" parent="Content"]
+layout_mode = 1
+offset_left = 0
+offset_top = 101
+offset_right = 810
+offset_bottom = 141
+mouse_filter = 2
+text = "Some paths only reveal themselves after the first has been walked."
+theme_override_fonts/font = SubResource("Sans")
+theme_override_font_sizes/font_size = 16
+theme_override_colors/font_color = Color(0.545098, 0.537255, 0.607843, 1.000000)
+
+
+[node name="Act1" type="Control" parent="Content"]
+layout_mode = 1
+offset_top = 171
+offset_right = 765.0
+offset_bottom = 269
+mouse_filter = 2
+
+[node name="Numeral" type="Label" parent="Content/Act1"]
+layout_mode = 1
+offset_left = 0
+offset_top = 14
+offset_right = 74
+offset_bottom = 81
+mouse_filter = 2
+text = "I"
+theme_override_fonts/font = SubResource("Serif")
+theme_override_font_sizes/font_size = 41
+theme_override_colors/font_color = Color(0.925490, 0.894118, 0.968627, 1.000000)
+
+
+[node name="ActLabel" type="Label" parent="Content/Act1"]
+layout_mode = 1
+offset_left = 78
+offset_top = 0
+offset_right = 338
+offset_bottom = 23
+mouse_filter = 2
+text = "A C T   I"
+theme_override_fonts/font = SubResource("Sans")
+theme_override_font_sizes/font_size = 12
+theme_override_colors/font_color = Color(0.270588, 0.600000, 0.584314, 1.000000)
+
+
+[node name="ActTitle" type="Label" parent="Content/Act1"]
+layout_mode = 1
+offset_left = 78
+offset_top = 20
+offset_right = 633
+offset_bottom = 69
+mouse_filter = 2
+text = "Into the Dark"
+theme_override_fonts/font = SubResource("Serif")
+theme_override_font_sizes/font_size = 29
+theme_override_colors/font_color = Color(0.925490, 0.894118, 0.968627, 1.000000)
+
+
+[node name="Subtitle" type="Label" parent="Content/Act1"]
+layout_mode = 1
+offset_left = 78
+offset_top = 65
+offset_right = 678
+offset_bottom = 90
+mouse_filter = 2
+text = "The first path is open."
+theme_override_fonts/font = SubResource("Sans")
+theme_override_font_sizes/font_size = 13
+theme_override_colors/font_color = Color(0.454902, 0.443137, 0.513725, 1.000000)
+
+
+[node name="Divider" type="ColorRect" parent="Content/Act1"]
+layout_mode = 1
+offset_left = 0
+offset_top = 97
+offset_right = 765
+offset_bottom = 98
+mouse_filter = 2
+color = Color(0.384314, 0.294118, 0.223529, 0.650000)
+
+[node name="GoldDot" type="ColorRect" parent="Content/Act1"]
+layout_mode = 1
+offset_left = 741.0
+offset_top = 40.0
+offset_right = 749.0
+offset_bottom = 48.0
+mouse_filter = 2
+color = Color(0.847059, 0.709804, 0.407843, 1.000000)
+
+[node name="Select" type="Button" parent="Content/Act1"]
+layout_mode = 1
+offset_left = 0
+offset_top = 0
+offset_right = 765
+offset_bottom = 96
+focus_mode = 0
+flat = true
+alignment = 0
+text = ""
+disabled = false
+theme_override_fonts/font = SubResource("Sans")
+theme_override_font_sizes/font_size = 14
+theme_override_colors/font_color = Color(1.000000, 1.000000, 1.000000, 1.000000)
+theme_override_colors/font_hover_color = Color(0.847059, 0.709804, 0.407843, 1.000000)
+theme_override_colors/font_pressed_color = Color(0.847059, 0.709804, 0.407843, 1.000000)
+theme_override_colors/font_disabled_color = Color(0.407843, 0.396078, 0.458824, 1.000000)
+
+[node name="Act2" type="Control" parent="Content"]
+layout_mode = 1
+offset_top = 276
+offset_right = 765.0
+offset_bottom = 374
+mouse_filter = 2
+
+[node name="Numeral" type="Label" parent="Content/Act2"]
+layout_mode = 1
+offset_left = 0
+offset_top = 14
+offset_right = 74
+offset_bottom = 81
+mouse_filter = 2
+text = "II"
+theme_override_fonts/font = SubResource("Serif")
+theme_override_font_sizes/font_size = 41
+theme_override_colors/font_color = Color(0.580392, 0.564706, 0.615686, 1.000000)
+
+
+[node name="ActLabel" type="Label" parent="Content/Act2"]
+layout_mode = 1
+offset_left = 78
+offset_top = 0
+offset_right = 338
+offset_bottom = 23
+mouse_filter = 2
+text = "A C T   II"
+theme_override_fonts/font = SubResource("Sans")
+theme_override_font_sizes/font_size = 12
+theme_override_colors/font_color = Color(0.372549, 0.384314, 0.435294, 1.000000)
+
+
+[node name="ActTitle" type="Label" parent="Content/Act2"]
+layout_mode = 1
+offset_left = 78
+offset_top = 20
+offset_right = 633
+offset_bottom = 69
+mouse_filter = 2
+text = "Unknown Path"
+theme_override_fonts/font = SubResource("Serif")
+theme_override_font_sizes/font_size = 29
+theme_override_colors/font_color = Color(0.603922, 0.580392, 0.647059, 1.000000)
+
+
+[node name="Subtitle" type="Label" parent="Content/Act2"]
+layout_mode = 1
+offset_left = 78
+offset_top = 65
+offset_right = 678
+offset_bottom = 90
+mouse_filter = 2
+text = "Locked"
+theme_override_fonts/font = SubResource("Sans")
+theme_override_font_sizes/font_size = 13
+theme_override_colors/font_color = Color(0.376471, 0.376471, 0.439216, 1.000000)
+
+
+[node name="Divider" type="ColorRect" parent="Content/Act2"]
+layout_mode = 1
+offset_left = 0
+offset_top = 97
+offset_right = 765
+offset_bottom = 98
+mouse_filter = 2
+color = Color(0.384314, 0.294118, 0.223529, 0.650000)
+
+[node name="Lock" type="Label" parent="Content/Act2"]
+layout_mode = 1
+offset_left = 738
+offset_top = 32
+offset_right = 778
+offset_bottom = 72
+mouse_filter = 2
+text = "◌"
+theme_override_fonts/font = SubResource("Sans")
+theme_override_font_sizes/font_size = 25
+theme_override_colors/font_color = Color(0.407843, 0.396078, 0.458824, 1.000000)
+
+
+[node name="Select" type="Button" parent="Content/Act2"]
+layout_mode = 1
+offset_left = 0
+offset_top = 0
+offset_right = 765
+offset_bottom = 96
+focus_mode = 0
+flat = true
+alignment = 0
+text = ""
+disabled = true
+theme_override_fonts/font = SubResource("Sans")
+theme_override_font_sizes/font_size = 14
+theme_override_colors/font_color = Color(1.000000, 1.000000, 1.000000, 1.000000)
+theme_override_colors/font_hover_color = Color(0.847059, 0.709804, 0.407843, 1.000000)
+theme_override_colors/font_pressed_color = Color(0.847059, 0.709804, 0.407843, 1.000000)
+theme_override_colors/font_disabled_color = Color(0.407843, 0.396078, 0.458824, 1.000000)
+
+[node name="Act3" type="Control" parent="Content"]
+layout_mode = 1
+offset_top = 381
+offset_right = 765.0
+offset_bottom = 479
+mouse_filter = 2
+
+[node name="Numeral" type="Label" parent="Content/Act3"]
+layout_mode = 1
+offset_left = 0
+offset_top = 14
+offset_right = 74
+offset_bottom = 81
+mouse_filter = 2
+text = "III"
+theme_override_fonts/font = SubResource("Serif")
+theme_override_font_sizes/font_size = 41
+theme_override_colors/font_color = Color(0.580392, 0.564706, 0.615686, 1.000000)
+
+
+[node name="ActLabel" type="Label" parent="Content/Act3"]
+layout_mode = 1
+offset_left = 78
+offset_top = 0
+offset_right = 338
+offset_bottom = 23
+mouse_filter = 2
+text = "A C T   III"
+theme_override_fonts/font = SubResource("Sans")
+theme_override_font_sizes/font_size = 12
+theme_override_colors/font_color = Color(0.372549, 0.384314, 0.435294, 1.000000)
+
+
+[node name="ActTitle" type="Label" parent="Content/Act3"]
+layout_mode = 1
+offset_left = 78
+offset_top = 20
+offset_right = 633
+offset_bottom = 69
+mouse_filter = 2
+text = "Unknown Path"
+theme_override_fonts/font = SubResource("Serif")
+theme_override_font_sizes/font_size = 29
+theme_override_colors/font_color = Color(0.603922, 0.580392, 0.647059, 1.000000)
+
+
+[node name="Subtitle" type="Label" parent="Content/Act3"]
+layout_mode = 1
+offset_left = 78
+offset_top = 65
+offset_right = 678
+offset_bottom = 90
+mouse_filter = 2
+text = "Locked"
+theme_override_fonts/font = SubResource("Sans")
+theme_override_font_sizes/font_size = 13
+theme_override_colors/font_color = Color(0.376471, 0.376471, 0.439216, 1.000000)
+
+
+[node name="Divider" type="ColorRect" parent="Content/Act3"]
+layout_mode = 1
+offset_left = 0
+offset_top = 97
+offset_right = 765
+offset_bottom = 98
+mouse_filter = 2
+color = Color(0.384314, 0.294118, 0.223529, 0.650000)
+
+[node name="Lock" type="Label" parent="Content/Act3"]
+layout_mode = 1
+offset_left = 738
+offset_top = 32
+offset_right = 778
+offset_bottom = 72
+mouse_filter = 2
+text = "◌"
+theme_override_fonts/font = SubResource("Sans")
+theme_override_font_sizes/font_size = 25
+theme_override_colors/font_color = Color(0.407843, 0.396078, 0.458824, 1.000000)
+
+
+[node name="Select" type="Button" parent="Content/Act3"]
+layout_mode = 1
+offset_left = 0
+offset_top = 0
+offset_right = 765
+offset_bottom = 96
+focus_mode = 0
+flat = true
+alignment = 0
+text = ""
+disabled = true
+theme_override_fonts/font = SubResource("Sans")
+theme_override_font_sizes/font_size = 14
+theme_override_colors/font_color = Color(1.000000, 1.000000, 1.000000, 1.000000)
+theme_override_colors/font_hover_color = Color(0.847059, 0.709804, 0.407843, 1.000000)
+theme_override_colors/font_pressed_color = Color(0.847059, 0.709804, 0.407843, 1.000000)
+theme_override_colors/font_disabled_color = Color(0.407843, 0.396078, 0.458824, 1.000000)
+
+[node name="Back" type="Button" parent="Content"]
+layout_mode = 1
+offset_left = 0
+offset_top = 505
+offset_right = 200
+offset_bottom = 553
+focus_mode = 0
+flat = true
+alignment = 0
+text = "←  B A C K"
+disabled = false
+theme_override_fonts/font = SubResource("Sans")
+theme_override_font_sizes/font_size = 15
+theme_override_colors/font_color = Color(0.666667, 0.647059, 0.721569, 1.000000)
+theme_override_colors/font_hover_color = Color(0.847059, 0.709804, 0.407843, 1.000000)
+theme_override_colors/font_pressed_color = Color(0.847059, 0.709804, 0.407843, 1.000000)
+theme_override_colors/font_disabled_color = Color(0.407843, 0.396078, 0.458824, 1.000000)
+

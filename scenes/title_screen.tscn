@@ -1,0 +1,148 @@
+[gd_scene load_steps=3 format=3]
+
+[sub_resource type="SystemFont" id="Serif"]
+font_names = PackedStringArray("Cinzel", "Georgia", "Times New Roman")
+
+[sub_resource type="SystemFont" id="Sans"]
+font_names = PackedStringArray("Work Sans", "Segoe UI", "Arial")
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="Content" type="Control" parent="."]
+layout_mode = 1
+anchor_left = 0.072
+anchor_top = 0.245
+anchor_right = 0.072
+anchor_bottom = 0.245
+offset_right = 780.0
+offset_bottom = 550.0
+mouse_filter = 2
+
+[node name="Version" type="Label" parent="Content"]
+layout_mode = 1
+offset_left = 0
+offset_top = 0
+offset_right = 490
+offset_bottom = 25
+mouse_filter = 2
+text = "V E R S I O N   0 . 1"
+theme_override_fonts/font = SubResource("Sans")
+theme_override_font_sizes/font_size = 12
+theme_override_colors/font_color = Color(0.274510, 0.611765, 0.600000, 1.000000)
+
+
+[node name="Eyebrow" type="Label" parent="Content"]
+layout_mode = 1
+offset_left = 0
+offset_top = 26
+offset_right = 490
+offset_bottom = 48
+mouse_filter = 2
+text = "A  W A N D E R I N G  T A L E"
+theme_override_fonts/font = SubResource("Sans")
+theme_override_font_sizes/font_size = 12
+theme_override_colors/font_color = Color(0.533333, 0.521569, 0.588235, 1.000000)
+
+
+[node name="TitleLine1" type="Label" parent="Content"]
+layout_mode = 1
+offset_left = -3
+offset_top = 48
+offset_right = 762
+offset_bottom = 151
+mouse_filter = 2
+text = "PATHS IN"
+theme_override_fonts/font = SubResource("Serif")
+theme_override_font_sizes/font_size = 79
+theme_override_colors/font_color = Color(0.925490, 0.894118, 0.968627, 1.000000)
+
+
+[node name="TitleThe" type="Label" parent="Content"]
+layout_mode = 1
+offset_left = -3
+offset_top = 137
+offset_right = 297
+offset_bottom = 237
+mouse_filter = 2
+text = "THE"
+theme_override_fonts/font = SubResource("Serif")
+theme_override_font_sizes/font_size = 79
+theme_override_colors/font_color = Color(0.925490, 0.894118, 0.968627, 1.000000)
+
+
+[node name="TitleDark" type="Label" parent="Content"]
+layout_mode = 1
+offset_left = 257
+offset_top = 137
+offset_right = 667
+offset_bottom = 237
+mouse_filter = 2
+text = "DARK"
+theme_override_fonts/font = SubResource("Serif")
+theme_override_font_sizes/font_size = 79
+theme_override_colors/font_color = Color(0.847059, 0.709804, 0.407843, 1.000000)
+
+
+[node name="TaglineRule" type="ColorRect" parent="Content"]
+layout_mode = 1
+offset_left = 0
+offset_top = 260
+offset_right = 40
+offset_bottom = 261
+mouse_filter = 2
+color = Color(0.847059, 0.709804, 0.407843, 0.650000)
+
+[node name="Tagline" type="Label" parent="Content"]
+layout_mode = 1
+offset_left = 54
+offset_top = 244
+offset_right = 529
+offset_bottom = 286
+mouse_filter = 2
+text = "find your way home..."
+theme_override_fonts/font = SubResource("Sans")
+theme_override_font_sizes/font_size = 20
+theme_override_colors/font_color = Color(0.572549, 0.564706, 0.615686, 1.000000)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.3)
+
+[node name="PlayDot" type="ColorRect" parent="Content"]
+layout_mode = 1
+offset_left = 0.0
+offset_top = 347.0
+offset_right = 8.0
+offset_bottom = 355.0
+mouse_filter = 2
+color = Color(0.847059, 0.709804, 0.407843, 1.000000)
+
+[node name="Play" type="Button" parent="Content"]
+layout_mode = 1
+offset_left = 25
+offset_top = 327
+offset_right = 219
+offset_bottom = 382
+focus_mode = 0
+flat = true
+alignment = 0
+text = "P L A Y"
+disabled = false
+theme_override_fonts/font = SubResource("Serif")
+theme_override_font_sizes/font_size = 20
+theme_override_colors/font_color = Color(0.925490, 0.894118, 0.968627, 1.000000)
+theme_override_colors/font_hover_color = Color(0.847059, 0.709804, 0.407843, 1.000000)
+theme_override_colors/font_pressed_color = Color(0.847059, 0.709804, 0.407843, 1.000000)
+theme_override_colors/font_disabled_color = Color(0.407843, 0.396078, 0.458824, 1.000000)
+
+[node name="PlayUnderline" type="ColorRect" parent="Content"]
+layout_mode = 1
+offset_left = 25
+offset_top = 382
+offset_right = 45
+offset_bottom = 383
+mouse_filter = 2
+color = Color(0.847059, 0.709804, 0.407843, 0.650000)
+

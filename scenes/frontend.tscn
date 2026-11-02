@@ -1,0 +1,43 @@
+[gd_scene load_steps=8 format=3]
+
+[ext_resource type="Script" path="res://scripts/frontend.gd" id="1_script"]
+[ext_resource type="Shader" path="res://shaders/menu_backdrop.gdshader" id="2_shader"]
+[ext_resource type="PackedScene" path="res://scenes/boot_screen.tscn" id="3_boot"]
+[ext_resource type="PackedScene" path="res://scenes/title_screen.tscn" id="4_title"]
+[ext_resource type="PackedScene" path="res://scenes/act_selection.tscn" id="5_acts"]
+[ext_resource type="PackedScene" path="res://scenes/intro_screen.tscn" id="6_intro"]
+
+[sub_resource type="ShaderMaterial" id="BackgroundMat"]
+shader = ExtResource("2_shader")
+
+[node name="Frontend" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource("1_script")
+
+[node name="MenuBackdrop" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+material = SubResource("BackgroundMat")
+color = Color(1, 1, 1, 1)
+
+[node name="Boot" parent="." instance=ExtResource("3_boot")]
+layout_mode = 1
+
+[node name="Title" parent="." instance=ExtResource("4_title")]
+visible = false
+layout_mode = 1
+
+[node name="Acts" parent="." instance=ExtResource("5_acts")]
+visible = false
+layout_mode = 1
+
+[node name="Intro" parent="." instance=ExtResource("6_intro")]
+visible = false
+layout_mode = 1
