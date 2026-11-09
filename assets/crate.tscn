@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://hdjplaowh6q6"]
+
+[ext_resource type="PackedScene" uid="uid://ci6rghpikyq74" path="res://assets/crate.glb" id="1_ecok0"]
+[ext_resource type="Script" uid="uid://de4ib84tkudko" path="res://scripts/terrain_grounder.gd" id="2_k8h77"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1vivr"]
+size = Vector3(2.1030273, 2.1009827, 2.0980988)
+
+[node name="Crate" type="Node3D" unique_id=26838789]
+
+[node name="crate" parent="." unique_id=171624893 instance=ExtResource("1_ecok0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2714988, 0, -0.10711789)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1595123318]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1153147013]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.27270508, 1.0022125, -0.107185364)
+shape = SubResource("BoxShape3D_1vivr")
+
+[node name="TerrainGrounder" type="Node" parent="." unique_id=1652396847]
+script = ExtResource("2_k8h77")

@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://yajxumrpgu8d"]
+
+[ext_resource type="PackedScene" uid="uid://dvcqdof4jymsg" path="res://assets/lamp-padestal.glb" id="1_j5584"]
+[ext_resource type="Script" uid="uid://de4ib84tkudko" path="res://scripts/terrain_grounder.gd" id="2_j0uui"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1vivr"]
+size = Vector3(1.412735, 1.6871338, 1.4300537)
+
+[node name="LightPadestal" type="Node3D" unique_id=948770588]
+
+[node name="lamp-padestal" parent="." unique_id=59020528 instance=ExtResource("1_j5584")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00030094385, -0.09710907, -0.00080645084)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1261262723]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=463431073]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.007347107, 0.8406372, -0.010559082)
+shape = SubResource("BoxShape3D_1vivr")
+
+[node name="Light" type="OmniLight3D" parent="." unique_id=625149665]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.045134, 0.007997036)
+light_color = Color(1, 1, 0.6745098, 1)
+omni_range = 6.804
+
+[node name="TerrainGrounder" type="Node" parent="." unique_id=1576962292]
+script = ExtResource("2_j0uui")

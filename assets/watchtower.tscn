@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://d173ifqnv7h58"]
+
+[ext_resource type="PackedScene" uid="uid://dwgnc3ygl5yc2" path="res://assets/watchtower-refined.glb" id="1_vtckw"]
+[ext_resource type="Script" uid="uid://de4ib84tkudko" path="res://scripts/terrain_grounder.gd" id="2_6j5ng"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1vivr"]
+size = Vector3(12.591064, 11.069641, 10.693359)
+
+[node name="Watchtower" type="Node3D" unique_id=1675766154]
+
+[node name="watchtower" parent="." unique_id=735292311 instance=ExtResource("1_vtckw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25514615, 0, 0.557884)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=763305838]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=364830989]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23815918, 5.5191956, 0.5566406)
+shape = SubResource("BoxShape3D_1vivr")
+
+[node name="TerrainGrounder" type="Node" parent="." unique_id=1427006317]
+script = ExtResource("2_6j5ng")
+vertical_offset = -2.415

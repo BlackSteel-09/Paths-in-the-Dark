@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://4t8f27nffir2" path="res://scripts/player.gd" id="2_sugp2"]
 [ext_resource type="Script" uid="uid://de4ib84tkudko" path="res://scripts/terrain_grounder.gd" id="3_sugp2"]
 [ext_resource type="Script" uid="uid://c1t0w4hgi565h" path="res://scripts/procedural_tree_gallery.gd" id="4_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://dtrqhv8ygnq8r" path="res://assets/lamppost.tscn" id="4_muem4"]
 [ext_resource type="Environment" uid="uid://3nm77otb7gyo" path="res://environment/night.tres" id="4_o6xl0"]
 [ext_resource type="Script" uid="uid://dkj872pnni6sb" path="res://scripts/procedural_forest.gd" id="5_tbgi4"]
 [ext_resource type="Script" uid="uid://udscviorfbj0" path="res://scripts/procedural_grass.gd" id="6_tefeu"]
@@ -12,7 +13,11 @@
 [ext_resource type="Script" uid="uid://dgai0mhqnkwly" path="res://scripts/water_follow.gd" id="10_choun"]
 [ext_resource type="Script" uid="uid://buemv6650swde" path="res://scripts/underwater_effect.gd" id="11_eb6dy"]
 [ext_resource type="Shader" uid="uid://8ehjgscc78w6" path="res://shaders/underwater_overlay.gdshader" id="12_trceg"]
-[ext_resource type="PackedScene" path="res://scenes/companion.tscn" id="13_trceg"]
+[ext_resource type="PackedScene" uid="uid://yb5xgf7up26c" path="res://scenes/companion.tscn" id="13_trceg"]
+[ext_resource type="PackedScene" uid="uid://hdjplaowh6q6" path="res://assets/crate.tscn" id="14_a8y0u"]
+[ext_resource type="PackedScene" uid="uid://d173ifqnv7h58" path="res://assets/watchtower.tscn" id="15_jkv2x"]
+[ext_resource type="PackedScene" uid="uid://bjjvne83evh3t" path="res://assets/tent.tscn" id="16_jbj1t"]
+[ext_resource type="PackedScene" uid="uid://drpqafshrqoyj" path="res://assets/light_padestal.tscn" id="18_dp3eg"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1vivr"]
 radius = 0.35
@@ -111,7 +116,7 @@ cast_shadow = 0
 mesh = SubResource("SphereMesh_1vivr")
 
 [node name="Water" type="MeshInstance3D" parent="." unique_id=1624236304]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.2305202, 0, -3.1151161)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.213854, 0, 10.857201)
 mesh = SubResource("PlaneMesh_1vivr")
 surface_material_override/0 = ExtResource("9_choun")
 script = ExtResource("10_choun")
@@ -134,4 +139,20 @@ comfort_max = 2.35
 start_moving_distance = 2.45
 stop_distance = 0.38
 face_turn_speed = 8.0
-print_state_changes = true
+show_debug_visual = false
+show_facing_arrow = false
+
+[node name="Crate" parent="." unique_id=26838789 instance=ExtResource("14_a8y0u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.797112, 3.339888, 9.237282)
+
+[node name="Watchtower" parent="." unique_id=1675766154 instance=ExtResource("15_jkv2x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.70492, 0.97535896, -55.21804)
+
+[node name="Tent" parent="." unique_id=395761418 instance=ExtResource("16_jbj1t")]
+transform = Transform3D(0.8916978, 0, 0.4526312, 0, 1, 0, -0.4526312, 0, 0.8916978, 24.802261, 2.8166854, 49.224678)
+
+[node name="Lamppost" parent="." unique_id=1649648995 instance=ExtResource("4_muem4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.118591, 1.3481195, 31.982634)
+
+[node name="LightPadestal" parent="." unique_id=948770588 instance=ExtResource("18_dp3eg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2990923, -0.36167592, -15.182161)

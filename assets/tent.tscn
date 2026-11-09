@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bjjvne83evh3t"]
+
+[ext_resource type="PackedScene" uid="uid://bil1xr3yscooi" path="res://assets/tent.glb" id="1_2yc6h"]
+[ext_resource type="Script" uid="uid://de4ib84tkudko" path="res://scripts/terrain_grounder.gd" id="2_bnh6y"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8vrlf"]
+size = Vector3(4.38414, 2.2802734, 9.8858795)
+
+[node name="Tent" type="Node3D" unique_id=395761418]
+
+[node name="tent" parent="." unique_id=245096114 instance=ExtResource("1_2yc6h")]
+transform = Transform3D(1.1430237, 0, 0, 0, 1.1430237, 0, 0, 0, 1.1430237, -0.00014066696, 0, -0.5219209)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1326771185]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=821829742]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.003440857, 1.1386719, -0.5192642)
+shape = SubResource("BoxShape3D_8vrlf")
+
+[node name="TerrainGrounder" type="Node" parent="." unique_id=583284131]
+script = ExtResource("2_bnh6y")

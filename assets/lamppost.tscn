@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dtrqhv8ygnq8r"]
+
+[ext_resource type="PackedScene" uid="uid://tdylahq8t1bb" path="res://assets/lamppost.glb" id="1_xokbe"]
+[ext_resource type="Script" uid="uid://de4ib84tkudko" path="res://scripts/terrain_grounder.gd" id="2_ry8vo"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_1vivr"]
+height = 4.9922485
+radius = 0.2368164
+
+[node name="Lamppost" type="Node3D" unique_id=1649648995]
+
+[node name="lamppost" parent="." unique_id=1589182302 instance=ExtResource("1_xokbe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00014591217, 0, 1.0758638e-05)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="lamppost" unique_id=1856123815]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="lamppost/StaticBody3D" unique_id=1612935369]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.497589, 0)
+shape = SubResource("CylinderShape3D_1vivr")
+
+[node name="Light" type="OmniLight3D" parent="." unique_id=128697008]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.3233938, -2.4188385)
+light_color = Color(1, 1, 0.6745098, 1)
+omni_range = 6.804
+
+[node name="TerrainGrounder" type="Node" parent="." unique_id=1220482721]
+script = ExtResource("2_ry8vo")
